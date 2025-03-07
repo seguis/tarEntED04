@@ -7,7 +7,8 @@ package hotel.aplicacion;
 import hotel.aplicacion.Utilidades;
 
 /**
- *
+ * Clase para el cliente del hotel.
+ * Contiene su nombre, dni, telefono y codigo de cliente si es creado correctamente.
  * @author Seguis
  */
 public class Cliente {

@@ -46,6 +46,10 @@ public class Reserva {
         return contadorReservas;
     }
 
+    /**
+     * Metodo para calcular el coste de la habitacion por el periodo de estancia.
+     * @return El precio total de la habitacion
+     */
     public double calcularCosteTotal() {
         long noches = ChronoUnit.DAYS.between(fechaEntrada, fechaSalida);
         double precioNoche = (tipoHabitacion == TipoHabitacion.DOBLE) ? PRECIO_DOBLE : PRECIO_SUITE;
