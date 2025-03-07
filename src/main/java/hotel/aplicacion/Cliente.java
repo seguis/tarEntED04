@@ -13,9 +13,9 @@ import hotel.aplicacion.Utilidades;
 public class Cliente {
     private static int contadorClientes = 0;
     private int codigo;
-    public String nombre;
-    public String dni;
-    public String telefono;
+    private String nombre;
+    private String dni;
+    private String telefono;
 
     
     public Cliente(String nombre, String dni, String telefono) throws Exception {
@@ -28,12 +28,82 @@ public class Cliente {
     }
 
         private static int obtenerNumeroCliente() {
-        contadorClientes++;
-        return contadorClientes;
+        setContadorClientes(getContadorClientes() + 1);
+        return getContadorClientes();
     }
 
     
     public String mostrarInformacion() {
-        return "Código: " + codigo + ", Nombre: " + nombre + ", DNI: " + dni + ", Teléfono: " + telefono;
+        return "Código: " + getCodigo() + ", Nombre: " + getNombre() + ", DNI: " + getDni() + ", Teléfono: " + getTelefono();
+    }
+
+    /**
+     * @return the contadorClientes
+     */
+    public static int getContadorClientes() {
+        return contadorClientes;
+    }
+
+    /**
+     * @param aContadorClientes the contadorClientes to set
+     */
+    public static void setContadorClientes(int aContadorClientes) {
+        contadorClientes = aContadorClientes;
+    }
+
+    /**
+     * @return the codigo
+     */
+    public int getCodigo() {
+        return codigo;
+    }
+
+    /**
+     * @param codigo the codigo to set
+     */
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * @return the dni
+     */
+    public String getDni() {
+        return dni;
+    }
+
+    /**
+     * @param dni the dni to set
+     */
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    /**
+     * @return the telefono
+     */
+    public String getTelefono() {
+        return telefono;
+    }
+
+    /**
+     * @param telefono the telefono to set
+     */
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 }
