@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author Antonio
  */
 public class Utilidades {
-  
+
     public static void validarDNI(String dni) throws Exception {
         if (dni == null || dni.length() != 9) {
             throw new Exception("El DNI debe tener 9 caracteres (8 números y 1 letra)");
@@ -41,7 +41,7 @@ public class Utilidades {
             try {
                 System.out.print(mensaje + " (formato yyyy-MM-dd): ");
                 String input = sc.nextLine();
-                fecha = convertirFecha(input);
+                fecha = LocalDate.parse(input, DateTimeFormatter.ISO_LOCAL_DATE);
                 fechaValida = true;
             } catch (DateTimeParseException e) {
                 System.out.println("Fecha inválida. Por favor, introduzca la fecha en formato yyyy-MM-dd.");
@@ -49,11 +49,7 @@ public class Utilidades {
         }
         return fecha;
     }
-    
-    public static LocalDate convertirFecha(String fechaTexto) throws DateTimeParseException{
-        return LocalDate.parse(fechaTexto, DateTimeFormatter.ISO_LOCAL_DATE);     
-    }
-    
+
     public static void validarFechas(LocalDate fechaInicio, LocalDate fechaFin) throws Exception {
         LocalDate hoy = LocalDate.now();
         if (fechaInicio.isBefore(hoy)) {
