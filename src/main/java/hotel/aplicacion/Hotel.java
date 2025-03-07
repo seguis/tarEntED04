@@ -3,10 +3,6 @@
  */
 package hotel.aplicacion;
 
-import hotel.modelo.Cliente;
-import hotel.modelo.Reserva;
-import hotel.modelo.TipoHabitacion;
-import hotel.utilidades.Utilidades;
 import java.time.LocalDate;
 import java.util.Scanner;
 
